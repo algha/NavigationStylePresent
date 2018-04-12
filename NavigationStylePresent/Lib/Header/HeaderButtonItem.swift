@@ -7,7 +7,15 @@
 //
 import UIKit
 
+enum ButtonPlace {
+    case Left
+    case Right
+    case Center
+}
+
 class HeaderButtonItem: UIButton {
     
+    var buttonPlace: ButtonPlace!
+    var index      : Int!
     
 }

@@ -14,6 +14,7 @@ protocol HeaderViewControllerDelegate {
     func loadTitleDescription() -> [String]?
     func loadLeftBtn() -> [String]?
     func loadRightBtn() -> [String]?
+    func buttonEvent(btn: HeaderButtonItem)
 }
 
 
@@ -24,6 +25,8 @@ class HeaderViewController: UIViewController, HeaderViewControllerDelegate {
     
     var headerHeight: CGFloat = 64
     
+    let kAnimator = Animator()
+    
     var mainHeight: CGFloat{
         return self.view.Height - self.headerHeight
     }
@@ -32,14 +35,22 @@ class HeaderViewController: UIViewController, HeaderViewControllerDelegate {
         return self.mainHeight - 50
     }
     
+    var swipeInteractionController: SwipeInteractionController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.transitioningDelegate = self
+        swipeInteractionController = SwipeInteractionController(viewController: self)
+        
         /*create header*/
         header = Header()
         header.frame = CGRect(x: 0, y: 0, width: self.view.Width, height: self.headerHeight)
         header.setUp()
         header.backgroundColor = UIColor.white
+        header.ButtonEvent = self.buttonEvent
         self.view.addSubview(header)
+        
         
         /*set title*/
         if self.loadTitle() != nil{
@@ -86,4 +97,22 @@ class HeaderViewController: UIViewController, HeaderViewControllerDelegate {
         return nil
     }
     
+    func buttonEvent(btn: HeaderButtonItem) {
+       
+    }
+    
+}
+
+extension HeaderViewController : UIViewControllerTransitioningDelegate{
+    
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        kAnimator.presenting = true
+        return kAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        kAnimator.presenting = false
+        return kAnimator
+    }
 }

@@ -9,6 +9,8 @@
 
 import UIKit
 
+
+
 class Header: UIView {
     
     var main: UIView!
@@ -16,6 +18,8 @@ class Header: UIView {
     var headerTitle: HeaderTitle!
     var leftButtonItems : [HeaderButtonItem] = []
     var rightButtonItems: [HeaderButtonItem] = []
+    
+    var ButtonEvent: ((HeaderButtonItem) -> Void)!
     
     func setUp(){
         
@@ -45,7 +49,10 @@ class Header: UIView {
         
         let btn = HeaderButtonItem()
         btn.frame = CGRect(x: self.leftButtonItems.count.floatVal * 44, y: 0, width: 44, height: 44)
+        btn.buttonPlace = .Left
+        btn.index = self.leftButtonItems.count
         btn.setImage(UIImage(named: img), for: .normal)
+        btn.addTarget(self, action: #selector(self.clickBtn(btn:)), for: .touchUpInside)
         main.addSubview(btn)
         
         self.leftButtonItems.append(btn)
@@ -56,12 +63,22 @@ class Header: UIView {
         
         let btn = HeaderButtonItem()
         btn.frame = CGRect(x: self.Width - (1 + self.rightButtonItems.count.floatVal) * 44, y: 0, width: 44, height: 44)
+        btn.buttonPlace = .Right
+        btn.index = self.rightButtonItems.count
         btn.setImage(UIImage(named: img), for: .normal)
+        btn.addTarget(self, action: #selector(self.clickBtn(btn:)), for: .touchUpInside)
         main.addSubview(btn)
         
         self.rightButtonItems.append(btn)
     }
     
+    
+    @objc func clickBtn(btn: HeaderButtonItem){
+        if self.ButtonEvent != nil{
+            self.ButtonEvent(btn);
+        }
+        
+    }
     
 }
 

@@ -18,7 +18,7 @@ import UIKit
 class HeaderTitle: UIView {
     
     var titleView      : UILabel!
-    var desctiptionView: UILabel!
+    var descriptionView: UILabel!
     
     func initHeaderTitle(title: String){
         viewForTitle(title: title)
@@ -30,7 +30,7 @@ class HeaderTitle: UIView {
         viewForDescription(description: description)
         
         titleView.frame       = CGRect(x: 0, y: 0, width: self.Width, height: self.Height.half)
-        desctiptionView.frame = CGRect(x: 0, y: titleView.HY(), width: self.Width, height: self.Height.half)
+        descriptionView.frame = CGRect(x: 0, y: titleView.HY(), width: self.Width, height: self.Height.half)
     }
     
     func viewForTitle(title: String){
@@ -42,8 +42,8 @@ class HeaderTitle: UIView {
     }
     
     func viewForDescription(description: String){
-        desctiptionView = UILabel()
-        self.addSubview(desctiptionView)
+        descriptionView = UILabel()
+        self.addSubview(descriptionView)
     }
     
 }

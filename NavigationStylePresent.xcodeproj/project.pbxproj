@@ -21,6 +21,9 @@
 		7A3642DE207F3FD2002D864E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642DD207F3FD2002D864E /* UIView.swift */; };
 		7A3642E0207F3FFC002D864E /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642DF207F3FFC002D864E /* Int.swift */; };
 		7A3642E4207F40AF002D864E /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642E3207F40AF002D864E /* DetailController.swift */; };
+		7A3642EF207F51A6002D864E /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642EE207F51A6002D864E /* Animator.swift */; };
+		7A3642F1207F5B02002D864E /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642F0207F5B02002D864E /* SwipeInteractionController.swift */; };
+		7A3642F3207F5EEC002D864E /* NavigationStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3642F2207F5EEC002D864E /* NavigationStyleController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		7A3642DD207F3FD2002D864E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7A3642DF207F3FFC002D864E /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		7A3642E3207F40AF002D864E /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		7A3642EE207F51A6002D864E /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		7A3642F0207F5B02002D864E /* SwipeInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
+		7A3642F2207F5EEC002D864E /* NavigationStyleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStyleController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		7A3642B9207F3B8D002D864E /* NavigationStylePresent */ = {
 			isa = PBXGroup;
 			children = (
+				7A3642E5207F4724002D864E /* Source */,
 				7A3642E2207F4093002D864E /* App */,
 				7A3642E1207F407F002D864E /* Lib */,
 				7A3642BA207F3B8E002D864E /* AppDelegate.swift */,
@@ -96,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				7A3642D4207F3ED2002D864E /* HeaderViewController.swift */,
+				7A3642F2207F5EEC002D864E /* NavigationStyleController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -129,6 +137,15 @@
 				7A3642E3207F40AF002D864E /* DetailController.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		7A3642E5207F4724002D864E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7A3642EE207F51A6002D864E /* Animator.swift */,
+				7A3642F0207F5B02002D864E /* SwipeInteractionController.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +220,14 @@
 			files = (
 				7A3642DE207F3FD2002D864E /* UIView.swift in Sources */,
 				7A3642BD207F3B8E002D864E /* ViewController.swift in Sources */,
+				7A3642F3207F5EEC002D864E /* NavigationStyleController.swift in Sources */,
+				7A3642F1207F5B02002D864E /* SwipeInteractionController.swift in Sources */,
 				7A3642D0207F3E77002D864E /* HeaderButtonItem.swift in Sources */,
 				7A3642D8207F3F73002D864E /* CGFloat.swift in Sources */,
 				7A3642E4207F40AF002D864E /* DetailController.swift in Sources */,
 				7A3642CE207F3E56002D864E /* Header.swift in Sources */,
 				7A3642DC207F3FB6002D864E /* UIScreen.swift in Sources */,
+				7A3642EF207F51A6002D864E /* Animator.swift in Sources */,
 				7A3642D2207F3E9E002D864E /* HeaderTitle.swift in Sources */,
 				7A3642E0207F3FFC002D864E /* Int.swift in Sources */,
 				7A3642BB207F3B8E002D864E /* AppDelegate.swift in Sources */,
@@ -350,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavigationStylePresent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavigationStylePresent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
