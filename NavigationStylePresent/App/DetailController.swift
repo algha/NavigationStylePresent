@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailController.swift
 //  NavigationStylePresent
 //
 //  Created by gaaboo on 2018/04/12.
@@ -8,18 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailController: HeaderViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
+    }
+    
+    override func loadTitle() -> String? {
+        return "Detail"
+    }
+    
+    override func loadLeftBtn() -> [String]? {
+        return ["back"]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+   
 
 }
-
